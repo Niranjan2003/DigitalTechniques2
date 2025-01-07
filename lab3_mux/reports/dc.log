@@ -1,0 +1,457 @@
+##########################################################################################################################
+#
+# SETUP SECTION
+#
+##########################################################################################################################
+remove_design -all
+1
+set sh_output_log_file reports/dc.log
+reports/dc.log
+set REF_LIB_PATH       $env(REF_LIB_PATH)
+/research/cas/public/DT2_2023/lib
+set DC_ALIB_PATH       "${REF_LIB_PATH}/logic_lib/alib-52"
+/research/cas/public/DT2_2023/lib/logic_lib/alib-52
+set search_path        "${REF_LIB_PATH}/logic_lib $search_path"
+/research/cas/public/DT2_2023/lib/logic_lib . /sw/rhel7/synopsys/syn/T-2022.03-SP5-1/libraries/syn /sw/rhel7/synopsys/syn/T-2022.03-SP5-1/dw/syn_ver /sw/rhel7/synopsys/syn/T-2022.03-SP5-1/dw/sim_ver
+set target_library     "saed32hvt_tt1p05v25c.db"
+saed32hvt_tt1p05v25c.db
+set synthetic_library  "dw_foundation.sldb"
+dw_foundation.sldb
+set link_library       "* saed32hvt_tt1p05v25c.db dw_foundation.sldb"
+* saed32hvt_tt1p05v25c.db dw_foundation.sldb
+set_app_var alib_library_analysis_path $DC_ALIB_PATH
+/research/cas/public/DT2_2023/lib/logic_lib/alib-52
+saif_map -start
+Information: The SAIF name mapping information database is now active. (PWR-602)
+1
+define_design_lib WORK -path output/synopsys_work
+1
+source input/0_setup_design.tcl 
+input/mux_test.sv input/mux_tb.sv
+set user $::env(USER)
+nsreegit22
+set char  [string index $user 0]
+n
+scan $char %c numval
+1
+set derate [expr { 1.0 + ( ($numval-96.0) / 500 ) } ]
+1.028
+echo $derate
+1.028
+##########################################################################################################################
+#
+# DESIGN IMPORT
+#
+##########################################################################################################################
+analyze -library WORK -format sverilog ${RTL_FILES}
+Running PRESTO HDLC
+Compiling source file ./input/mux.sv
+Presto compilation completed successfully.
+Loading db file '/research/cas/public/DT2_2023/lib/logic_lib/saed32hvt_tt1p05v25c.db'
+Loading db file '/sw/rhel7/synopsys/syn/T-2022.03-SP5-1/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN_NAME -library WORK
+Loading db file '/sw/rhel7/synopsys/syn/T-2022.03-SP5-1/libraries/syn/gtech.db'
+Loading db file '/sw/rhel7/synopsys/syn/T-2022.03-SP5-1/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_tt1p05v25c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 13 in file
+        './input/mux.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            17            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (mux)
+Elaborated 1 design.
+Current design is now 'mux'.
+1
+current_design ${DESIGN_NAME}
+Current design is 'mux'.
+{mux}
+if { [ file exists input/constraints.sdc] } {
+    read_sdc input/constraints.sdc
+}
+
+Reading SDC version 2.1...
+1
+if { [ file exists input/constraints.tcl] } {
+    source input/constraints.tcl
+}
+##########################################################################################################################
+#
+# OPTIMIZATION
+#
+##########################################################################################################################
+set_timing_derate -max -late $derate
+1
+if { [info exists DC_COMPILE_COMMAND] } {
+    eval "$DC_COMPILE_COMMAND"
+} else {
+    compile_ultra
+}
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | T-2022.03-DWBB_202203.4 |     *     |
+| Licensed DW Building Blocks        | T-2022.03-DWBB_202203.4 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 36                                     |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 0                                      |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 1                                      |
+| Number of VT Class                                      | 1                                      |
+| Number of Clocks                                        | 0                                      |
+| Number of Dont Touch Cells                              | 18                                     |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+  Simplifying Design 'mux'
+
+Loaded alib file '/research/cas/public/DT2_2023/lib/logic_lib/alib-52/saed32hvt_tt1p05v25c.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mux'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_tt1p05v25c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:01      39.6      0.29       0.3       0.0                           164620.7031
+    0:00:01      39.6      0.29       0.3       0.0                           164620.7031
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:01      39.6      0.29       0.3       0.0                           164620.7031
+    0:00:01      39.6      0.29       0.3       0.0                           164620.7031
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:01      40.9      0.33       0.3       0.0                           145617.9375
+    0:00:01      40.2      0.21       0.2       0.0                           195576.0000
+    0:00:01      40.2      0.21       0.2       0.0                           195576.0000
+    0:00:02      40.2      0.21       0.2       0.0                           195576.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+    0:00:02      40.2      0.21       0.2       0.0                           195576.0000
+    0:00:02      40.2      0.21       0.2       0.0                           195576.0000
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:02      37.4      0.21       0.2       0.0                           113187.7578
+    0:00:03      37.4      0.21       0.2       0.0                           113187.7578
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      37.4      0.21       0.2       0.0                           113187.7578
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:03      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:04      35.8      0.21       0.2       0.0                           92756.9844
+    0:00:04      35.8      0.21       0.2       0.0                           92756.9844
+Loading db file '/research/cas/public/DT2_2023/lib/logic_lib/saed32hvt_tt1p05v25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+1
+##########################################################################################################################
+#
+# WRITE OUT RESULTS
+#
+##########################################################################################################################
+report_timing
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mux
+Version: T-2022.03-SP5-1
+Date   : Sun Jul 28 04:14:38 2024
+****************************************
+
+Operating Conditions: tt1p05v25c   Library: saed32hvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: sel_in[2] (input port)
+  Endpoint: mux_out (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mux                ForQA                 saed32hvt_tt1p05v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  sel_in[2] (in)                           0.00       0.00 f
+  U20/Y (MUX21X1_HVT)                      0.11       0.11 r
+  U25/Y (OA22X1_HVT)                       0.10       0.21 r
+  U29/Y (AND3X1_HVT)                       0.09       0.31 r
+  mux_out (out)                            0.00       0.31 r
+  data arrival time                                   0.31
+
+  max_delay                                0.10       0.10
+  output external delay                    0.00       0.10
+  data required time                                  0.10
+  -----------------------------------------------------------
+  data required time                                  0.10
+  data arrival time                                  -0.31
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.21
+
+
+1
+report_area -designware > reports/${DESIGN_NAME}.gatelevel.area.txt
+report_timing > reports/${DESIGN_NAME}.gatelevel.timing.txt
+report_qor > reports/${DESIGN_NAME}.gatelevel.qor.txt
+read_saif -auto_map_names -input output/${DESIGN_NAME}.saif -instance_name ${DESIGN_NAME}_tb/DUT -verbose
+1
+report_power > reports/${DESIGN_NAME}.gatelevel.power.txt
+report_reference  -hierarchy > reports/${DESIGN_NAME}.gatelevel.reference.txt
+change_names -rules verilog -hierarchy
+1
+write -hierarchy -format verilog -output output/${DESIGN_NAME}_gatelevel.v
+Writing verilog file '/study/2023/521404A/nsreegit22/DT2_2023/labs/lab3_mux/workdir/output/mux_gatelevel.v'.
+1
+write_sdf -version 2.1 output/${DESIGN_NAME}_gatelevel.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/study/2023/521404A/nsreegit22/DT2_2023/labs/lab3_mux/workdir/output/mux_gatelevel.sdf'. (WT-3)
+1
+reset_timing_derate
+1
+write_sdc -version 1.7 output/${DESIGN_NAME}_gatelevel.sdc
+1
+saif_map -write_map output/${DESIGN_NAME}_rtl.saifmap
+Information: Writing SAIF name mapping information to file 'output/mux_rtl.saifmap'. (PWR-635)
+1
+gui_start
+Current design is 'mux'.
+4.1.1
+gui_create_schematic
+Current design is 'mux'.
+Schematic.1
+Schematic.1
+Current design is 'mux'.
+dc_shell> uplevel #0 { report_reference -hierarchy }
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : reference
+Design : mux
+Version: T-2022.03-SP5-1
+Date   : Sun Jul 28 04:14:52 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1_HVT         saed32hvt_tt1p05v25c
+                                  2.033152       3      6.099456  
+AND3X1_HVT         saed32hvt_tt1p05v25c
+                                  2.287296       1      2.287296  
+INVX0_HVT          saed32hvt_tt1p05v25c
+                                  1.270720       3      3.812160  
+INVX1_HVT          saed32hvt_tt1p05v25c
+                                  1.270720       1      1.270720  
+MUX21X1_HVT        saed32hvt_tt1p05v25c
+                                  3.303872       1      3.303872  
+NAND2X0_HVT        saed32hvt_tt1p05v25c
+                                  1.524864       3      4.574592  
+NAND3X0_HVT        saed32hvt_tt1p05v25c
+                                  1.779008       3      5.337024  
+NOR2X0_HVT         saed32hvt_tt1p05v25c
+                                  2.541440       1      2.541440  
+OA22X1_HVT         saed32hvt_tt1p05v25c
+                                  2.541440       1      2.541440  
+OR2X1_HVT          saed32hvt_tt1p05v25c
+                                  2.033152       2      4.066304  
+-----------------------------------------------------------------------------
+Total 10 references                                    35.834305
+dc_shell> 

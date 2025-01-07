@@ -1,0 +1,396 @@
+#####################################################################################
+# 1. SETUP SECTION
+#####################################################################################
+# 
+# set VSIM_RTL 1
+# 1
+# 
+# Create libraries and map paths to names
+# 
+# vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# vmap work work
+# QuestaSim-64 vmap 2022.4_1 Lib Mapping Utility 2022.11 Nov 11 2022
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# source input/0_setup_design.tcl 
+# input/effreg_tb.sv
+# 
+#####################################################################################
+# 2. COMPILATION (ANALYSIS)
+#####################################################################################
+# 
+# Compile RTL model and testbench to 'work'
+# 
+# if { [info exists RTL_FILES ] } {
+#     eval vlog -work work ${RTL_FILES}
+# }
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 02:58:55 on Jul 27,2024
+# vlog -reportprogress 300 -work work input/effreg.sv 
+# -- Compiling module and2
+# -- Compiling module or2
+# -- Compiling module inv
+# -- Compiling module dff
+# -- Compiling module eff
+# -- Compiling module effreg
+# 
+# Top level modules:
+# 	effreg
+# End time: 02:58:55 on Jul 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# eval vlog -timescale 1ns/1ps -work work ${TESTBENCH_FILES}
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 02:58:55 on Jul 27,2024
+# vlog -reportprogress 300 -timescale 1ns/1ps -work work input/effreg_tb.sv 
+# -- Compiling module effreg_tb
+# ** Error: (vlog-13069) input/effreg_tb.sv(34): near "#": syntax error, unexpected '#', expecting ';'.
+# End time: 02:58:56 on Jul 27,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /sw/rhel7/siemens/questa_sim-2022.4_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./scripts/vsim_rtlsim.tcl line 33
+# /sw/rhel7/siemens/questa_sim-2022.4_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -timescale 1ns/1ps -work work input/effreg_tb.sv"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval vlog -timescale 1ns/1ps -work work ${TESTBENCH_FILES}"
+do scripts/vsim_rtlsim.tcl
+# transcript file reports/vsim_transcript.txt
+#####################################################################################
+# 1. SETUP SECTION
+#####################################################################################
+# 
+# set VSIM_RTL 1
+# 1
+# 
+# Create libraries and map paths to names
+# 
+# vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# vmap work work
+# QuestaSim-64 vmap 2022.4_1 Lib Mapping Utility 2022.11 Nov 11 2022
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# source input/0_setup_design.tcl 
+# input/effreg_tb.sv
+# 
+#####################################################################################
+# 2. COMPILATION (ANALYSIS)
+#####################################################################################
+# 
+# Compile RTL model and testbench to 'work'
+# 
+# if { [info exists RTL_FILES ] } {
+#     eval vlog -work work ${RTL_FILES}
+# }
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 02:59:12 on Jul 27,2024
+# vlog -reportprogress 300 -work work input/effreg.sv 
+# -- Compiling module and2
+# -- Compiling module or2
+# -- Compiling module inv
+# -- Compiling module dff
+# -- Compiling module eff
+# -- Compiling module effreg
+# 
+# Top level modules:
+# 	effreg
+# End time: 02:59:12 on Jul 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# eval vlog -timescale 1ns/1ps -work work ${TESTBENCH_FILES}
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 02:59:12 on Jul 27,2024
+# vlog -reportprogress 300 -timescale 1ns/1ps -work work input/effreg_tb.sv 
+# -- Compiling module effreg_tb
+# ** Error: (vlog-13069) input/effreg_tb.sv(34): near "#": syntax error, unexpected '#', expecting ';'.
+# End time: 02:59:12 on Jul 27,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /sw/rhel7/siemens/questa_sim-2022.4_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./scripts/vsim_rtlsim.tcl line 33
+# /sw/rhel7/siemens/questa_sim-2022.4_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -timescale 1ns/1ps -work work input/effreg_tb.sv"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval vlog -timescale 1ns/1ps -work work ${TESTBENCH_FILES}"
+
+
+}"
+# invalid command name "}""
+
+
+
+do scripts/vsim_rtlsim.tcl
+# transcript file reports/vsim_transcript.txt
+#####################################################################################
+# 1. SETUP SECTION
+#####################################################################################
+# 
+# set VSIM_RTL 1
+# 1
+# 
+# Create libraries and map paths to names
+# 
+# vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# vmap work work
+# QuestaSim-64 vmap 2022.4_1 Lib Mapping Utility 2022.11 Nov 11 2022
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# source input/0_setup_design.tcl 
+# input/effreg_tb.sv
+# 
+#####################################################################################
+# 2. COMPILATION (ANALYSIS)
+#####################################################################################
+# 
+# Compile RTL model and testbench to 'work'
+# 
+# if { [info exists RTL_FILES ] } {
+#     eval vlog -work work ${RTL_FILES}
+# }
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 03:01:01 on Jul 27,2024
+# vlog -reportprogress 300 -work work input/effreg.sv 
+# -- Compiling module and2
+# -- Compiling module or2
+# -- Compiling module inv
+# -- Compiling module dff
+# -- Compiling module eff
+# -- Compiling module effreg
+# 
+# Top level modules:
+# 	effreg
+# End time: 03:01:01 on Jul 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# eval vlog -timescale 1ns/1ps -work work ${TESTBENCH_FILES}
+# QuestaSim-64 vlog 2022.4_1 Compiler 2022.11 Nov 11 2022
+# Start time: 03:01:01 on Jul 27,2024
+# vlog -reportprogress 300 -timescale 1ns/1ps -work work input/effreg_tb.sv 
+# -- Compiling module effreg_tb
+# 
+# Top level modules:
+# 	effreg_tb
+# End time: 03:01:01 on Jul 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vdir -l
+# Library vendor : Model Technology
+# Maximum unnamed designs : 3
+# MODULE and2
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: 885d1d<oM2GhGT[hC5QK:1
+#     Verilog version: bKCGn:VnkL5oCXSREl0Jb3
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:2:6
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# MODULE dff
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: C6dKaH@Gb:jDFezi==J]Z3
+#     Verilog version: 9fL6hTVUh^6N;]5Yhm[]Z0
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:26:10
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# MODULE eff
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: 2Y<84K=CQ9F2kSHH@KL902
+#     Verilog version: ci5J`N0d4m^HmmYKDi2R62
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:39:16
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# MODULE effreg
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: 2hT6XNo4VzYmfB6YUE<m]2
+#     Verilog version: bn]kgeU=hQcGP2n1P?6WJ3
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:57:16
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# OPTIMIZED DESIGN effreg_opt
+#     Compile time: Sat Jul 27 02:51:52 2024
+#     Version string: c^C<<YQG7W;KGXfcgbRLL0
+#     Top-level model: work effreg_tb fast 0
+#     Compile options: -work work +acc -debugdb
+#     Compile defaults: CvgOpt=0
+#     Short name: effreg_opt
+#     Opcode format: 2022.4_1; VCOM/VLOG SE-64 Object version 75
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+# MODULE effreg_tb
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: 9D0^O1zozM2IQz_=I;Fm>0
+#     Verilog version: HlZ:CLPZPhn408UDciQL[0
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Sat Jul 27 03:00:12 2024
+#     HDL source file: input/effreg_tb.sv
+#     Source file: input/effreg_tb.sv
+#     Start location: input/effreg_tb.sv:5:44
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -timescale 1ns/1ps -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# MODULE inv
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: Vl[lcZMPj<ZPQ65f?deE:2
+#     Verilog version: dK92gBT^_zRVl:8oGKMf41
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:18:6
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# MODULE or2
+#     Depends on: X sv_std std 9oUSJO;AeEaW`l:M@^WG92
+#     Compile time: Sat Jul 27 03:01:01 2024
+#     Debug Symbol file exists
+#     DU Coverage Signature: h1KEUdknhiQC^18mll:F_0
+#     Verilog version: bAXXSbXROYfjBInEBPf1[1
+#     Source directory: /homedir04/nsreegit22/DT2_2023/labs/lab2_effreg/workdir
+#     Source modified time: Mon Jul  1 18:47:10 2024
+#     HDL source file: input/effreg.sv
+#     Source file: input/effreg.sv
+#     Start location: input/effreg.sv:10:6
+#     Version string: Dg1SIo80bB@j0V0VzS_@n1
+#     Opcode format: 2022.4_1; VLOG SE-64 Object version 75
+#     Optimized Verilog design root: 1
+#     VHDL language standard: 1
+#     Compiled in vopt flow
+#     Compile options: -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+#     Compile defaults: CvgOpt=0
+# 
+#####################################################################################
+# 3. ELABORATION
+#####################################################################################
+# 
+# Code optimization
+# vopt -work work +acc -debugdb ${DESIGN_NAME}_tb -o ${DESIGN_NAME}_opt
+# QuestaSim-64 vopt 2022.4_1 Compiler 2022.11 Nov 11 2022
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# Start time: 03:01:01 on Jul 27,2024
+# vopt -reportprogress 300 -work work "+acc" -debugdb effreg_tb -o effreg_opt 
+# 
+# Top level modules:
+# 	effreg_tb
+# 
+# Analyzing design...
+# -- Loading module effreg_tb
+# -- Loading module effreg
+# -- Loading module eff
+# -- Loading module dff
+# -- Loading module or2
+# -- Loading module and2
+# -- Loading module inv
+# Incremental compilation check found 6 design-units (out of 7) may be reused.
+# Optimizing 1 design-unit (inlining 0/26 module instances):
+# -- Optimizing module effreg_tb(fast)
+# -- Processing module effreg_tb(fast) for debug
+# Optimized design name is effreg_opt
+# End time: 03:01:02 on Jul 27,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# 
+# Elaboration
+# vsim +nowarnTSCALE -t 1ps -msgmode both -debugdb -fsmdebug ${DESIGN_NAME}_opt
+# vsim "+nowarnTSCALE" -t 1ps -msgmode both -debugdb -fsmdebug effreg_opt 
+# Start time: 03:01:02 on Jul 27,2024
+# Loading sv_std.std
+# Loading work.effreg_tb(fast)
+# Loading work.effreg(fast)
+# Loading work.eff(fast)
+# Loading work.dff(fast)
+# Loading work.or2(fast)
+# Loading work.and2(fast)
+# Loading work.inv(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# 
+# Set up data logging (log all data)
+# add log -r /*
+# 
+# Setup and configure Wave window
+# source input/vsim_waves.tcl
+# 0 ps
+# 1 ns
+# 
+# Start switching activity recording
+# power add -r /${DESIGN_NAME}_tb/DUT/*
+# power on -r /${DESIGN_NAME}_tb/DUT/*
+# 
+#####################################################################################
+# 4. SIMULATION
+#####################################################################################
+# 
+# Simulate
+# run -all
+# 
+# Zoom to results
+# 
+# wave zoom full
+# 0 ps
+# 315 ns
+# 
+# power report -bsaif output/${DESIGN_NAME}.saif
+# 
+# 
+# End time: 03:01:23 on Jul 27,2024, Elapsed time: 0:00:21
+# Errors: 0, Warnings: 0
