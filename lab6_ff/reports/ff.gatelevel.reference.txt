@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : reference
+Design : ff
+Version: T-2022.03-SP5-1
+Date   : Sun Jul 28 11:37:30 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1_HVT         saed32hvt_tt1p05v25c
+                                  2.033152       1      2.033152  
+DFFARX1_HVT        saed32hvt_tt1p05v25c
+                                  7.116032       2     14.232064  n
+DFFASX1_HVT        saed32hvt_tt1p05v25c
+                                  7.116032       1      7.116032  n
+DFFX1_HVT          saed32hvt_tt1p05v25c
+                                  6.607744       1      6.607744  n
+INVX0_HVT          saed32hvt_tt1p05v25c
+                                  1.270720       1      1.270720  
+-----------------------------------------------------------------------------
+Total 5 references                                     31.259713
+1

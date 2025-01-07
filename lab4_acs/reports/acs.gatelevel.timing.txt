@@ -1,0 +1,56 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : acs
+Version: T-2022.03-SP5-1
+Date   : Sun Jul 28 04:43:03 2024
+****************************************
+
+Operating Conditions: tt1p05v25c   Library: saed32hvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: bpm_in[1] (input port)
+  Endpoint: pm_out[0] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  acs                8000                  saed32hvt_tt1p05v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  bpm_in[1] (in)                           0.00       0.00 r
+  U206/Y (NOR2X0_HVT)                      0.08       0.08 f
+  U286/Y (OAI21X2_HVT)                     0.11       0.19 r
+  U289/Y (AOI21X1_HVT)                     0.13       0.32 f
+  U110/Y (OAI21X2_HVT)                     0.11       0.42 r
+  U308/Y (AOI21X2_HVT)                     0.14       0.56 f
+  U402/Y (OA21X1_HVT)                      0.08       0.64 f
+  U404/Y (XOR2X2_HVT)                      0.13       0.77 r
+  U405/Y (OR2X1_HVT)                       0.08       0.85 r
+  U406/Y (OA21X1_HVT)                      0.08       0.93 r
+  U587/Y (NAND3X0_HVT)                     0.08       1.01 f
+  U588/Y (NAND2X0_HVT)                     0.06       1.07 r
+  U589/Y (NAND3X0_HVT)                     0.07       1.14 f
+  U590/Y (AND3X1_HVT)                      0.11       1.25 f
+  U610/Y (NBUFFX4_HVT)                     0.08       1.33 f
+  U616/Y (MUX21X1_HVT)                     0.12       1.45 r
+  pm_out[0] (out)                          0.00       1.45 r
+  data arrival time                                   1.45
+
+  max_delay                                1.00       1.00
+  output external delay                    0.00       1.00
+  data required time                                  1.00
+  -----------------------------------------------------------
+  data required time                                  1.00
+  data arrival time                                  -1.45
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.45
+
+
+1

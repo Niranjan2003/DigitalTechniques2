@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : syncvar
+Version: T-2022.03-SP5-1
+Date   : Sun Jul 28 11:40:53 2024
+****************************************
+
+Operating Conditions: tt1p05v25c   Library: saed32hvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: ab_r_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: xor_out (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  syncvar            ForQA                 saed32hvt_tt1p05v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  ab_r_reg[1]/CLK (DFFARX1_HVT)            0.00       0.00 r
+  ab_r_reg[1]/Q (DFFARX1_HVT)              0.18       0.18 r
+  U8/SO (HADDX1_HVT)                       0.14       0.32 f
+  xor_out (out)                            0.00       0.32 f
+  data arrival time                                   0.32
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  output external delay                    0.00       5.00
+  data required time                                  5.00
+  -----------------------------------------------------------
+  data required time                                  5.00
+  data arrival time                                  -0.32
+  -----------------------------------------------------------
+  slack (MET)                                         4.68
+
+
+1
