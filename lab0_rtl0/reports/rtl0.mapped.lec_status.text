@@ -1,0 +1,23 @@
+**************************************************
+Report         : status
+
+Reference      : r:/WORK/rtl0
+Implementation : i:/WORK/rtl0
+Version        : U-2022.12
+Date           : Sat Jul 27 02:38:22 2024
+**************************************************
+
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+----------------------
+ Reference design: r:/WORK/rtl0
+ Implementation design: i:/WORK/rtl0
+ 40 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0       8      32       0      40
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+****************************************************************************************
+1
